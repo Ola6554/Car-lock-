@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Lock - Order Any Car Online</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header { background: #000; color: #fff; padding: 20px; text-align: center; }
+    nav a { color: #fff; margin: 0 15px; text-decoration: none; }
+    .hero { padding: 60px 20px; background: #eee; text-align: center; }
+    .cars { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
+    .car { background: #fff; margin: 10px; padding: 10px; border: 1px solid #ccc; width: 200px; }
+    .form { background: #f4f4f4; padding: 20px; text-align: center; }
+    input, textarea { width: 80%; padding: 10px; margin: 10px 0; }
+    button { padding: 10px 20px; }
+    footer { background: #000; color: #fff; text-align: center; padding: 20px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Car Lock</h1>
+  <nav>
+    <a href="#cars">Browse Cars</a>
+    <a href="#order">Place Order</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Order Any Car You Need Online</h2>
+  <p>From SUVs to luxury cars — rent or buy with ease.</p>
+</section>
+
+<section id="cars" class="cars">
+  <div class="car">
+    <img src="https://via.placeholder.com/200x120" alt="Car 1">
+    <h3>Toyota Camry</h3>
+    <p>Available for rent and purchase</p>
+  </div>
+  <div class="car">
+    <img src="https://via.placeholder.com/200x120" alt="Car 2">
+    <h3>BMW X5</h3>
+    <p>Luxury SUV – Available now</p>
+  </div>
+  <div class="car">
+    <img src="https://via.placeholder.com/200x120" alt="Car 3">
+    <h3>Honda Civic</h3>
+    <p>Affordable and efficient</p>
+  </div>
+</section>
+
+<section id="order" class="form">
+  <h2>Place an Order</h2>
+  <form>
+    <input type="text" placeholder="Your Name" required><br>
+    <input type="email" placeholder="Email Address" required><br>
+    <textarea placeholder="Which car are you interested in?" required></textarea><br>
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+<footer id="contact">
+  <p>Contact us at info@carlock.com | +123 456 7890</p>
+  <p>&copy; 2025 Car Lock</p>
+</footer>
+
+</body>
+</html
