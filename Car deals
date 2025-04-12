@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Car Showcase</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f2f2f2;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    select {
+      display: block;
+      margin: 20px auto;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .car-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .car-card {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .car-card img {
+      max-width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Browse Cars</h1>
+
+  <select id="carType" onchange="filterCars()">
+    <option value="all">All Types</option>
+    <option value="SUV">SUV</option>
+    <option value="Sedan">Sedan</option>
+    <option value="Truck">Truck</option>
+    <option value="Coupe">Coupe</option>
+  </select>
+
+  <div class="car-container" id="carContainer"></div>
+
+  <script>
+    const cars = [
+      { name: "Toyota RAV4", type: "SUV", image: "https://source.unsplash.com/featured/?toyota" },
+      { name: "Honda Civic", type: "Sedan", image: "https://source.unsplash.com/featured/?honda-civic" },
+      { name: "Ford F-150", type: "Truck", image: "https://source.unsplash.com/featured/?ford-truck" },
+      { name: "Chevy Camaro", type: "Coupe", image: "https://source.unsplash.com/featured/?chevy-camaro" },
+      { name: "BMW X5", type: "SUV", image: "https://source.unsplash.com/featured/?bmw-x5" },
+      { name: "Tesla Model 3", type: "Sedan", image: "https://source.unsplash.com/featured/?tesla-model-3" }
+    ];
+
+    function displayCars(carList) {
+      const container = document.getElementById("carContainer");
+      container.innerHTML = "";
+      carList.forEach(car => {
+        container.innerHTML += `
+          <div class="car-card">
+            <img src="${car.image}" alt="${car.name}">
+            <h3>${car.name}</h3>
+            <p>Type: ${car.type}</p>
+          </div>
+        `;
+      });
+    }
+
+    function filterCars() {
+      const selected = document.getElementById("carType").value;
+      if (selected === "all") {
+        displayCars(cars);
+      } else {
+        const filtered = cars.filter(car => car.type === selected);
+        displayCars(filtered);
+      }
+    }
+
+    // Load all cars on page load
+    window.onload = () => {
+      displayCars(cars);
+    };
+  </script>
+
+</body>
+</html
